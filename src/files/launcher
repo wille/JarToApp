@@ -4,8 +4,13 @@
 # Constants
 JAVA_MAJOR=1
 JAVA_MINOR=7
+<<<<<<< HEAD
 APP_JAR="app.jar"
 APP_NAME="Application"
+=======
+APP_JAR="Controller.jar"
+APP_NAME="jRAT"
+>>>>>>> 78ded917a9b98f9721eb3e479b2a5b692ef80454
 VM_ARGS=""
 
 # Set the working directory
