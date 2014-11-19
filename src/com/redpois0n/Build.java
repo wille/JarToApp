@@ -19,7 +19,7 @@ public class Build {
 	}
 
 	public static final String infoFile = "/files/Info.plist";
-	public static final String launcherFile = "/files/launcher.txt";
+	public static final String launcherFile = "/files/launcher";
 
 	public static void build(File input, File output, File icon, String mainclass, String appTitle, boolean dockIcon, int minimumVersion) throws Exception {
 		File basePath = new File(output.getAbsolutePath(), "/Contents");
