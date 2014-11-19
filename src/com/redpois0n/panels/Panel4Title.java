@@ -1,33 +1,15 @@
 package com.redpois0n.panels;
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.DefaultListCellRenderer;
-import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.ScrollPaneConstants;
-
-import com.redpois0n.ClassSelectEvent;
-import com.redpois0n.DialogSelectClass;
 import javax.swing.JCheckBox;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 @SuppressWarnings("serial")
 public class Panel4Title extends PanelBase {
-	private DefaultListModel<String> model = new DefaultListModel<String>();
+	
 	private JCheckBox chckbxDock;
 	private JTextField txtTitle;
 

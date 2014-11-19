@@ -43,10 +43,6 @@ public class Build {
 
 		copy(Main.class.getResourceAsStream(infoFile), new FileOutputStream(info));
 		copyFile(input, jar);
-
-		// String chmod = "chmod +x " + launcher.getAbsolutePath();
-		// Runtime.getRuntime().exec(new String[] { "/bin/bash", "-c", chmod });
-
 	}
 
 	public static void copyFile(File input, File output) throws Exception {
