@@ -42,7 +42,7 @@ public class Frame extends JFrame {
 	public Frame() {
 		instance = this;
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Frame.class.getResource("/com/redpois0n/icons/icon.png")));
-		setTitle("jCrypt " + Main.getVersion() + " - 1/5");
+		setTitle("JarToApp - 1/5");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -158,6 +158,6 @@ public class Frame extends JFrame {
 		
 		((PanelBase)com).opened();
 		
-		setTitle("jCrypt " + Main.getVersion() + " - " + (currentPanel + 1) + "/" + panels.size());
+		setTitle("JarToApp - " + (currentPanel + 1) + "/" + panels.size());
 	}
 }
