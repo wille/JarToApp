@@ -17,6 +17,7 @@ import com.redpois0n.Util;
 public class Panel5Create extends PanelBase {
 	
 	private JComboBox<Object> cbPath;
+	private JComboBox<Object> cbIconPath;
 
 	public Panel5Create() {
 		super("Create .jar file");
@@ -35,12 +36,32 @@ public class Panel5Create extends PanelBase {
 				}
 			}
 		});
+		
+		JLabel lblIconLocationicns = new JLabel("Icon location (.icns)");
+		
+		cbIconPath = new JComboBox<Object>();
+		cbIconPath.setEditable(true);
+		
+		JButton btnBrowseIcon = new JButton("Browse");
+		btnBrowseIcon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				File file = Util.showSaveDialog();
+				if (file != null) {
+					cbIconPath.setSelectedItem(file.getAbsolutePath());
+				}
+			}
+		});
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(19)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(cbIconPath, GroupLayout.PREFERRED_SIZE, 322, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnBrowseIcon, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblIconLocationicns)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(cbPath, GroupLayout.PREFERRED_SIZE, 322, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
@@ -57,7 +78,13 @@ public class Panel5Create extends PanelBase {
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(cbPath, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btnBrowse))
-					.addContainerGap(118, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(lblIconLocationicns)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(cbIconPath, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnBrowseIcon))
+					.addContainerGap(59, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 	}
@@ -65,5 +92,8 @@ public class Panel5Create extends PanelBase {
 	public File getFile() {
 		return new File(cbPath.getSelectedItem().toString());
 	}
-
+	
+	public File getIcon() {
+		return new File(cbIconPath.getSelectedItem().toString());
+	}
 }

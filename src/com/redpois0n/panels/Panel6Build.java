@@ -105,18 +105,19 @@ public class Panel6Build extends PanelBase {
 		try {		
 			Panel1SelectJar p1 = (Panel1SelectJar) Frame.panels.get(0);
 			Panel2MainClass p2 = (Panel2MainClass) Frame.panels.get(1);
-			Panel3Encryption p3 = (Panel3Encryption) Frame.panels.get(2);
-			Panel4Exclude p4 = (Panel4Exclude) Frame.panels.get(3);
+			Panel3MinimumJava p3 = (Panel3MinimumJava) Frame.panels.get(2);
+			Panel4Title p4 = (Panel4Title) Frame.panels.get(3);
 			Panel5Create p5 = (Panel5Create) Frame.panels.get(4);
 			
 			File input = p1.getFile();
 			File output = p5.getFile();
+			File icon = p5.getIcon();
 			String mainclass = p2.getMainClass();
-			String key = p3.getKey();
-			boolean encall = p3.shouldEncryptAll();
+			String title = p4.getTitle();
+			boolean dockIcon = p4.enableUI();
+			int minimumJava = p3.getMinimum();
 			
-			Build.build(input, output, mainclass, key, encall, p4.getExcluded());
-			
+			Build.build(input, output, icon, mainclass, title, dockIcon, minimumJava);
 			lblFile.setText("File \"" + output.getAbsolutePath() + "\" successfully created.");
 			
 			this.output = output;
