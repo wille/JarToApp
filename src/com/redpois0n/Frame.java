@@ -20,7 +20,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.redpois0n.panels.Panel1SelectJar;
 import com.redpois0n.panels.Panel2MainClass;
-import com.redpois0n.panels.Panel3Encryption;
+import com.redpois0n.panels.Panel3MinimumJava;
 import com.redpois0n.panels.Panel4Exclude;
 import com.redpois0n.panels.Panel5Create;
 import com.redpois0n.panels.Panel6Build;
@@ -125,7 +125,7 @@ public class Frame extends JFrame {
 		panels.clear();
 		panels.add(new Panel1SelectJar());
 		panels.add(new Panel2MainClass());
-		panels.add(new Panel3Encryption());
+		panels.add(new Panel3MinimumJava());
 		panels.add(new Panel4Exclude());
 		panels.add(new Panel5Create());
 		panels.add(new Panel6Build());
