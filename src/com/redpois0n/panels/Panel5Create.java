@@ -22,7 +22,7 @@ public class Panel5Create extends PanelBase {
 	public Panel5Create() {
 		super("Create .jar file");
 		
-		JLabel lblFilePathOf = new JLabel("File path of .jar to export");
+		JLabel lblFilePathOf = new JLabel("File path of .app to export");
 		
 		cbPath = new JComboBox<Object>();
 		cbPath.setEditable(true);
