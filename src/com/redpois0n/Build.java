@@ -12,12 +12,6 @@ import java.io.PrintWriter;
 
 public class Build {
 
-	public static final String runpath;
-
-	static {
-		runpath = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-	}
-
 	public static final String infoFile = "/files/Info.plist";
 	public static final String launcherFile = "/files/launcher";
 
