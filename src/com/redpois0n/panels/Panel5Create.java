@@ -32,7 +32,7 @@ public class Panel5Create extends PanelBase {
 			public void actionPerformed(ActionEvent arg0) {
 				File file = Util.showSaveDialog();
 				if (file != null) {
-					cbPath.setSelectedItem(file.getAbsolutePath());
+					cbPath.setSelectedItem(file.getAbsolutePath() + ".app");
 				}
 			}
 		});
@@ -94,6 +94,9 @@ public class Panel5Create extends PanelBase {
 	}
 	
 	public File getIcon() {
+		if (cbIconPath.getSelectedItem() == null) {
+			return null;
+		}
 		return new File(cbIconPath.getSelectedItem().toString());
 	}
 }
