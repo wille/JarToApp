@@ -13,7 +13,7 @@ public abstract class PanelBase extends JPanel {
 		this.title = title;
 	}
 	
-	public String getTitle() {
+	public String getAppTitle() {
 		return title;
 	}
 	

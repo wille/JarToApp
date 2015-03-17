@@ -154,7 +154,7 @@ public class Frame extends JFrame {
 		panel.revalidate();
 		panel.repaint();
 		
-		lblTitle.setText(((PanelBase)com).getTitle());
+		lblTitle.setText(((PanelBase)com).getAppTitle());
 		
 		((PanelBase)com).opened();
 		

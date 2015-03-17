@@ -97,11 +97,12 @@ public class Panel6Build extends PanelBase {
 			File output = p5.getFile();
 			File icon = p5.getIcon();
 			String mainclass = p2.getMainClass();
-			String title = p4.getTitle();
+			String title = p4.getAppTitle();
+			String appName = p4.getAppName();
 			boolean dockIcon = p4.enableUI();
 			int minimumJava = p3.getMinimum();
 			
-			Build.build(input, output, icon, mainclass, title, dockIcon, minimumJava);
+			Build.build(input, output, icon, appName, mainclass, title, dockIcon, minimumJava);
 			lblFile.setText("File \"" + output.getAbsolutePath() + "\" successfully created.");
 			
 			this.output = output;
