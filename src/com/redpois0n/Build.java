@@ -22,7 +22,7 @@ public class Build {
 		new File(basePath, "/Resources").mkdirs();
 
 		File info = new File(basePath, "/Info.plist");
-		File launcher = new File(basePath, "/MacOS/launcher");
+		File launcher = new File(basePath, "/MacOS/launcher.sh");
 		File jar = new File(basePath, "/MacOS/" + input.getName());
 
 		File iconFile = new File(basePath + "/Resources/application.icns");
