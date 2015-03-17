@@ -15,7 +15,7 @@ public class Build {
 	public static final String FILE_PLIST = "/files/Info.plist";
 	public static final String FILE_LAUNCHER = "/files/launcher.sh";
 
-	public static void build(File input, File output, File icon, String appname, String mainclass, String appTitle, boolean dockIcon, int minimumVersion) throws Exception {
+	public static void build(File input, File output, File icon, String mainclass, String appTitle, boolean dockIcon, int minimumVersion) throws Exception {
 		File basePath = new File(output.getAbsolutePath(), "/Contents");
 
 		new File(basePath, "/MacOS").mkdirs();
@@ -33,7 +33,7 @@ public class Build {
 			copyFile(icon, iconFile);
 		}
 
-		copyLauncher(launcher, appname, input.getName(), appTitle, dockIcon, minimumVersion);
+		copyLauncher(launcher, input.getName(), appTitle, dockIcon, minimumVersion);
 
 		copy(Main.class.getResourceAsStream(FILE_PLIST), new FileOutputStream(info));
 		copyFile(input, jar);
@@ -61,7 +61,7 @@ public class Build {
 		return count;
 	}
 
-	public static void copyLauncher(File launcherDest, String appName, String jarName, String appTitle, boolean showIcon, int minimumVersion) throws Exception {
+	public static void copyLauncher(File launcherDest, String jarName, String appTitle, boolean showIcon, int minimumVersion) throws Exception {
 		InputStream is = Main.class.getResourceAsStream(FILE_LAUNCHER);
 
 		FileWriter dest = new FileWriter(launcherDest.getAbsolutePath());
@@ -83,7 +83,7 @@ public class Build {
 		br.close();
 		
 		String rawFile = sb.toString();
-		rawFile = rawFile.replace("%NAME%", appName).replace("%MINOR%", minimumVersion + "").replace("%JAR%", jarName).replace("%DOCK%", showIcon + "").replace("%NAME%", appTitle);
+		rawFile = rawFile.replace("%MINOR%", minimumVersion + "").replace("%JAR%", jarName).replace("%DOCK%", showIcon + "").replace("%NAME%", appTitle);
 		
 		pw.print(rawFile); 
 		
