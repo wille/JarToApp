@@ -17,6 +17,10 @@ public class Build {
 
 	public static void build(File input, File output, File icon, String mainclass, String appTitle, boolean dockIcon, int minimumVersion) throws Exception {
 		File basePath = new File(output.getAbsolutePath(), "/Contents");
+		
+		if (output.exists()) {
+			output.delete();
+		}
 
 		new File(basePath, "/MacOS").mkdirs();
 		new File(basePath, "/Resources").mkdirs();
