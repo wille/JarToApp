@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Constants
+NAME=%NAME%
 JAVA_MAJOR=1
 JAVA_MINOR=%MINOR%
 APP_JAR="%JAR%"
@@ -11,6 +12,8 @@ VM_ARGS=""
 
 # Set the working directory
 DIR=$(cd "$(dirname "$0")"; pwd)
+DIR="$DIR/$NAME.app/Contents/MacOS"
+echo $DIR
 
 # Error message for NO JAVA dialog
 ERROR_TITLE="Cannot launch $APP_NAME"
